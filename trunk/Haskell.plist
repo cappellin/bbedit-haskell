@@ -5,24 +5,23 @@
 BBEdit Codeless Language Module for the Haskell programming language.
 	Copyright (c) 2012 Nicolas Godbout
 	http://code.google.com/p/bbedit-haskell
-	Release: 2012-04-24
+	Release: r3
 	License: see at end of this document
 	
 INSTALL: place this file in
 	~/Library/Application Support/BBEdit/Language Modules/
 Tip: If you have a hard time locating this folder, open a Finder window,
-     press Command-Shift-G and paste the path above in the text box.
+	 press Command-Shift-G and paste the path above in the text box.
 
 FEATURES:
 	- comment highlighting
 	- color syntax for keywords
 	- color syntax for characters and strings
-	- scans for function names (not completely reliable; this is hard!)
+	- scans for function names (not completely reliable)
 	- automatic detection of .hs suffix
 	- support for Un/Comment command in BBEdit 10.1 and above
 
 TODO:
-	- add support for multiline strings
 	- better recognition of function name and body
 -->
 <plist version="1.0">
@@ -52,23 +51,27 @@ TODO:
 	<true/>
 	<key>BBLMKeywordList</key>
 	<array>
-		<string>module</string>
-		<string>import</string>
-		<string>qualified</string>
-		<string>where</string>
 		<string>class</string>
-		<string>instance</string>
-		<string>type</string>
-		<string>newtype</string>
 		<string>data</string>
+		<string>default</string>
+		<string>deriving</string>
 		<string>do</string>
-		<string>case</string>
-		<string>of</string>
-		<string>let</string>
-		<string>in</string>
-		<string>if</string>
-		<string>then</string>
 		<string>else</string>
+		<string>foreign</string>
+		<string>if</string>
+		<string>import</string>
+		<string>in</string>
+		<string>infix</string>
+		<string>infixl</string>
+		<string>infixr</string>
+		<string>instance</string>
+		<string>let</string>
+		<string>module</string>
+		<string>newtype</string>
+		<string>of</string>
+		<string>then</string>
+		<string>type</string>
+		<string>where</string>
 	</array>
 	<key>BBLMCommentLineDefault</key>
 	<string>-- </string>
@@ -79,13 +82,13 @@ TODO:
 		
 		<key>Comment Pattern</key>
 		<string><![CDATA[(?x: 
-			(?>	-- [^\r\n]* )
+			(?> -- [^\r\n]* )
 			|
 			(?P<block>
-				\{- (	(?> [^-\{\}]+ )
-					|	\{ (?!-)
-					|	- (?!\})
-					|	(?<!-) \}
+				\{- ( (?> [^-\{\}]+ )
+					| \{ (?!-)
+					| - (?!\})
+					| (?<!-) \}
 					| (?P>block)
 					)*
 				-\}
