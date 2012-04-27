@@ -51,6 +51,7 @@ TODO:
 	<true/>
 	<key>BBLMKeywordList</key>
 	<array>
+	    <string>case</string>
 		<string>class</string>
 		<string>data</string>
 		<string>default</string>
@@ -82,8 +83,6 @@ TODO:
 		
 		<key>Comment Pattern</key>
 		<string><![CDATA[(?x: 
-			(?> -- [^\r\n]* )
-			|
 			(?P<block>
 				\{- ( (?> [^-\{\}]+ )
 					| \{ (?!-)
@@ -93,6 +92,8 @@ TODO:
 					)*
 				-\}
 			)
+			|
+			(?> -- [^\r\n]* )
 		)]]></string>
 		
 		<key>String Pattern</key>
