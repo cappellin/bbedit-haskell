@@ -7,7 +7,12 @@ This module adds support for editing the Haskell computer language within BBEdit
 
 ## Features
 
-These features are implemented: * color highlighting of keywords and comment, including nested comments * color syntax for characters and strings, including multi-line strings * scanning of function names; they appear in a drop-down menu in the editing window * automatic detection of .hs suffix * support for Un/Comment command available in BBEdit 10.1 and above
+These features are implemented: 
+* color highlighting of keywords and comment, including nested comments
+* color syntax for characters and strings, including multi-line strings 
+* scanning of function names; they appear in a drop-down menu in the editing window 
+* automatic detection of .hs suffix 
+* support for Un/Comment command available in BBEdit 10.1 and above
 
 ## Installing
 
